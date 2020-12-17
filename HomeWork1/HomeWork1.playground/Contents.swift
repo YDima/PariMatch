@@ -3,13 +3,14 @@ import PlaygroundSupport
 
 class ViewController : UIViewController, UITextFieldDelegate {
      
-     let calculate = UIButton(frame: CGRect(x: 90, y: 200, width: 200, height: 33))
+     let calculate = UIButton(frame: CGRect(x: 90, y: 190, width: 200, height: 33))
      let input = UITextField(frame: CGRect(x: 160, y: 150, width: 200, height: 24))
      let label = UILabel()
      let info = UILabel()
      let fibonacci = UILabel()
      let factorial = UILabel()
      let pi = UILabel()
+     let time = UILabel()
      
      override func viewDidLoad() {
           super.viewDidLoad()
@@ -42,25 +43,32 @@ class ViewController : UIViewController, UITextFieldDelegate {
           calculate.addTarget(self, action: #selector(calculatePressed(sender:)), for: UIControl.Event.touchUpInside)
           
           view.addSubview(fibonacci)
-          fibonacci.frame = CGRect(x: 15, y: 300, width: 333, height: 100)
+          fibonacci.frame = CGRect(x: 15, y: 200, width: 333, height: 100)
           fibonacci.text = ""
           fibonacci.textColor = .white
           fibonacci.numberOfLines = 0
           fibonacci.lineBreakMode = .byWordWrapping
           
           view.addSubview(factorial)
-          factorial.frame = CGRect(x: 15, y: 375, width: 333, height: 100)
+          factorial.frame = CGRect(x: 15, y: 275, width: 333, height: 100)
           factorial.text = ""
           factorial.textColor = .white
           factorial.numberOfLines = 0
           factorial.lineBreakMode = .byWordWrapping
           
           view.addSubview(pi)
-          pi.frame = CGRect(x: 15, y: 450, width: 333, height: 100)
+          pi.frame = CGRect(x: 15, y: 350, width: 333, height: 100)
           pi.text = ""
           pi.textColor = .white
           pi.numberOfLines = 0
           pi.lineBreakMode = .byWordWrapping
+          
+          view.addSubview(time)
+          time.frame = CGRect(x: 15, y: 400, width: 333, height: 333)
+          time.text = ""
+          time.textColor = .white
+          time.numberOfLines = 0
+          time.lineBreakMode = .byWordWrapping
           
           self.view = view
     }
@@ -92,6 +100,7 @@ class ViewController : UIViewController, UITextFieldDelegate {
                     textField.placeholder = "Input must be a number"
                     return
                }
+               
                let n = num!
                
                guard n >= 0 else {
@@ -99,18 +108,52 @@ class ViewController : UIViewController, UITextFieldDelegate {
                     textField.placeholder = "Input must be a positive number"
                     return
                }
-               
-               let fact = Factorial(n)
+//               let s1 = DispatchTime.now()
+               let fact = Factorial(n).recursiveFactorial(n)
+//               let f1 = DispatchTime.now()
+//
+//               let s2 = DispatchTime.now()
+               let factI = Factorial(n).iterationFactorial(n)
+//               let f2 = DispatchTime.now()
+//
+//               let s3 = DispatchTime.now()
                let fib = Fibonacci(n)
+//               let f3 = DispatchTime.now()
+//
+//               let s4 = DispatchTime.now()
                let piNumber = Pi(n)
+//               let f4 = DispatchTime.now()
+               
+//               let t1 = f1.uptimeNanoseconds - s1.uptimeNanoseconds
+//               let t_f1 = Double(t1) / 1_000_000_000
+//
+//               let t2 = f2.uptimeNanoseconds - s2.uptimeNanoseconds
+//               let t_f2 = Double(t2) / 1_000_000_000
+//
+//               let t3 = f3.uptimeNanoseconds - s3.uptimeNanoseconds
+//               let t_fi = Double(t3) / 1_000_000_000
+//
+//               let t4 = f4.uptimeNanoseconds - s4.uptimeNanoseconds
+//               let t_pi = Double(t4) / 1_000_000_000
                
                fibonacci.text = "Fibonacci sequence till \(n) is: \(fib.fibonacci(n))"
                factorial.text = """
 Factorial of number \(n) is:
--iteration \(fact.iterationFactorial(n))
--recursive version: \(fact.recursiveFactorial(n))
+   iteration: \(factI)
+   recursive version: \(fact)
 """
                pi.text = "\(n) digit of Pi number fraction is: \(piNumber.pi(to: n))"
+//               time.text = """
+//Completed in time:
+//Fibonacci: \(t_fi)
+//
+//Factorial:
+//   recursive: \(t_f1)
+//
+//   iterational: \(t_f2)
+//
+//Pi: \(t_pi)
+//"""
                
           }
           input.text = ""
@@ -189,8 +232,8 @@ class Pi {
      
      func pi(to n: Int) -> String {
           
-          guard n >= 0 && n <= 16 else {
-               return "Please input range from 0 to 16"
+          guard n >= 0 && n <= 15 else {
+               return "Please input range from 0 to 15"
           }
           
           let factor = (pow(10, n) as NSDecimalNumber).doubleValue

@@ -3,7 +3,13 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/ydima3/Developer/PariMatch/PariMatch/HomeWork1/HomeWork1.playground#CharacterRangeLen=1332&amp;CharacterRangeLoc=1318&amp;EndingColumnNumber=0&amp;EndingLineNumber=64&amp;StartingColumnNumber=0&amp;StartingLineNumber=32&amp;Timestamp=629365842.607661"
+         documentLocation = "file:///Users/ydima3/Developer/PariMatch/HomeWork1/HomeWork1.playground#CharacterRangeLen=1584&amp;CharacterRangeLoc=1343&amp;EndingColumnNumber=10&amp;EndingLineNumber=71&amp;StartingColumnNumber=34&amp;StartingLineNumber=32&amp;Timestamp=629398932.239291"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/ydima3/Developer/PariMatch/HomeWork1/HomeWork1.playground#CharacterRangeLen=1&amp;CharacterRangeLoc=37&amp;EndingColumnNumber=0&amp;EndingLineNumber=2&amp;StartingColumnNumber=24&amp;StartingLineNumber=1&amp;Timestamp=629398932.239457"
+         lockedSize = "{944, 50}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
