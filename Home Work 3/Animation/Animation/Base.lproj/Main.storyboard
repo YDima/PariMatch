@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                             </view>
                             <view contentMode="center" id="Nz4-Qw-ohm">
-                                <rect key="frame" x="57" y="113" width="100" height="100"/>
+                                <rect key="frame" x="56" y="113" width="101" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
