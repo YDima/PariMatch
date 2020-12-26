@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Circle Animation/Circle Animation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Sports App/Sports App.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Animation/Animation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Calculator/Calculator.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Size Classes/Size Classes.xcodeproj">
+   </FileRef>
+</Workspace>
