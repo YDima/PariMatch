@@ -27,18 +27,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
      }
 
      func sceneDidBecomeActive(_ scene: UIScene) {
-          // Called when the scene has moved from an inactive state to an active state.
-          // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+          self.window?.viewWithTag(12345)?.removeFromSuperview()
      }
 
      func sceneWillResignActive(_ scene: UIScene) {
-          // Called when the scene will move from an active state to an inactive state.
-          // This may occur due to temporary interruptions (ex. an incoming phone call).
+          let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+          let blurEffectView = UIVisualEffectView(effect: blurEffect)
+          blurEffectView.frame = window!.frame
+          blurEffectView.tag = 12345
+
+          self.window?.addSubview(blurEffectView)
      }
 
      func sceneWillEnterForeground(_ scene: UIScene) {
-          // Called as the scene transitions from the background to the foreground.
-          // Use this method to undo the changes made on entering the background.
+          self.window?.viewWithTag(12345)?.removeFromSuperview()
      }
 
      func sceneDidEnterBackground(_ scene: UIScene) {
